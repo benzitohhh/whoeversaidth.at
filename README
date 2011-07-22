@@ -1,0 +1,41 @@
+Whoeversaidth.at
+
+
+SETUP
+************
+0) You need a public-facing IP address
+1) Create a facebook app:
+    https://developers.facebook.com/apps
+    a) note the App ID
+    b) In the "Web" tab, set the "Site URL" (MUST be a public-facing domain/IP) 
+2) Set the APP ID in index.html (var called "fbAppId")
+3) deploy to web server (i.e. Apache)
+app can now be accessed from the "Site URL"
+
+
+WORKAROUND FOR LOCAL
+********************
+1) Need wireline connection to router
+2) Enable router port forwarding:
+    a) Log into router (http://192.168.1.1)
+    b) click configuration avanzada (user=admin, pass=1234)
+    c) click "advanced setup", then click "NAT"
+    d) click "Virtual Server"
+    e) enter a new rule (i.e. 8080 to the local IP)
+        i.e. need local IP address (i.e. 192.168.1.34)
+                can get this from System prefs -> Network)
+    f) click "save"
+3) Enable router loopback
+    a) Telnet into the router...
+        $ telnet 192.168.1.1    (pass=1234)
+    b) enter "ip nat loopback on"
+    c) enter "exit"
+4) Start server
+    if using java server.... bind it to the local IP (i.e. 192.168.1.34)
+    if using apache via zend...
+        add simlink to /usr/local/zend/apache2/htdocs
+        sudo /usr/local/zend/bin/zendctl.sh start
+        sudo /usr/local/zend/bin/zendctl.sh stop
+It should now be possible to access the server locally, using public IP...
+    
+
