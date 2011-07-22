@@ -76,7 +76,7 @@ body {
 }
 
 .jewel {
-	float: left;
+	float: right;
 	margin-right: -1px;
 	display: none;
 }
@@ -86,7 +86,7 @@ body {
 	width:24px;
 	height:29px;
 	text-decoration:none;
-	margin:0 1px;
+	margin: -5px 1px;
 }
 
 #scoreJewel a.jewelButton {
@@ -104,8 +104,8 @@ body {
 	font-weight: bold;
 	padding-bottom: 1px;
 	position: absolute;
-	right: 5px;
-	top: 0px;
+	right: 3px;
+	top: -3px;
 	z-index: 101;
 }
 
@@ -226,18 +226,12 @@ a.button {
 			<div class="shareContainer-wrapper">
 				<a href="http://twitter.com/share?text=http%3A%2F%2Fwhoeversaidth.at%20(facebook%20game!)&count=none" class="twitter-share-button">Tweet</a>
 				<fb:like href="http://whoeversaidth.at" send="true" show_faces="false" layout="button_count" font="lucida grande"></fb:like>
-			</div>
-		</div>
-		<div id="jewelContainer">
-			<div class="jewelContainer-wrapper">
-				<div style="">
-					<div class="jewel" id="scoreJewel">
-						<a class="jewelButton">
-							<span class="jewelCount" id="scoreCountWrapper" ">
-								<span id="scoreCountValue">0</span>
-							</span>
-						</a>
-					</div>
+				<div class="jewel" id="scoreJewel">
+					<a class="jewelButton">
+						<span class="jewelCount" id="scoreCountWrapper" ">
+							<span id="scoreCountValue">0</span>
+						</span>
+					</a>
 				</div>
 			</div>
 		</div>
